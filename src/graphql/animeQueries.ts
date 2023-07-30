@@ -17,6 +17,11 @@ export const GET_ALL_ANIME = gql`
           large
         }
       }
+      pageInfo {
+        total
+        lastPage
+        hasNextPage
+      }
     }
   }
 `;

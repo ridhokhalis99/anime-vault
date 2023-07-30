@@ -15,6 +15,11 @@ export const titleStyles = css`
   font-size: 14px;
   font-weight: 500;
   color: ${colors.grey500};
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
   transition: all 0.2s ease-in-out;
 `;
 
