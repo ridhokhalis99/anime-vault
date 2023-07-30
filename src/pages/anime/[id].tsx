@@ -18,7 +18,7 @@ import {
   tagTextStyles,
 } from "./styles";
 import { Button, Badge } from "@mantine/core";
-import { Bookmarks } from "tabler-icons-react";
+import { IconBookmarks } from "@tabler/icons-react";
 
 const AnimeDetailPage = () => {
   const router = useRouter();
@@ -54,7 +54,7 @@ const AnimeDetailPage = () => {
               width={200}
               css={imageStyles}
             />
-            <Button css={buttonStyles} leftIcon={<Bookmarks size={18} />}>
+            <Button css={buttonStyles} leftIcon={<IconBookmarks size={18} />}>
               Add to collection
             </Button>
           </div>
