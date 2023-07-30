@@ -7,7 +7,7 @@ const colors = {
   grey600: "#4a5d70",
   grey700: "#393E46",
   grey900: "#222831",
-  primary900: "#00ADB5",
+  primary900: "#218BE6",
 };
 
 export default colors;
