@@ -4,6 +4,7 @@ import AnimeList from "../components/AnimeList";
 import { Pagination } from "@mantine/core";
 import { usePagination } from "@mantine/hooks";
 import { indexStyles, paginationStyles } from "./styles";
+import StashBox from "@/components/StashBox";
 
 const Home = () => {
   const { active, setPage } = usePagination({
@@ -11,7 +12,7 @@ const Home = () => {
     total: 100,
   });
 
-  const { loading, error, data } = useQuery(GET_ALL_ANIME, {
+  const { loading, data } = useQuery(GET_ALL_ANIME, {
     variables: { page: active, perPage: 10 },
   });
 
@@ -26,6 +27,7 @@ const Home = () => {
         withControls
         css={paginationStyles}
       />
+      <StashBox />
     </main>
   );
 };

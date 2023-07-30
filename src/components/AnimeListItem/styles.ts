@@ -4,10 +4,18 @@ import colors from "@/styles/colors";
 export const listItemStyles = css`
   display: grid;
   cursor: pointer;
+  position: relative;
 
   :hover h2 {
     color: ${colors.grey900};
   }
+`;
+
+export const addStashStyles = css`
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 5;
 `;
 
 export const posterStyles = css`
