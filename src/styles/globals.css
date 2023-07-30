@@ -16,6 +16,10 @@ body {
 body {
   background: #EDF1F5;
   margin: 0 auto;
-  max-width: 1440px;
-  padding: 0 24px;
+  height: 100vh;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
 }

@@ -4,6 +4,10 @@ import colors from "@/styles/colors";
 export const listItemStyles = css`
   display: grid;
   cursor: pointer;
+
+  :hover h2 {
+    color: ${colors.grey900};
+  }
 `;
 
 export const posterStyles = css`
@@ -15,16 +19,11 @@ export const titleStyles = css`
   font-size: 14px;
   font-weight: 500;
   color: ${colors.grey500};
+  text-decoration: none;
   overflow: hidden;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
   transition: all 0.2s ease-in-out;
-`;
-
-export const listItemHoveredTitleStyles = css`
-  ${listItemStyles}:hover h2 {
-    color: ${colors.grey900};
-  }
 `;

@@ -1,19 +1,16 @@
 import { AnimeItem } from "@/types";
-import {
-  listItemHoveredTitleStyles,
-  listItemStyles,
-  posterStyles,
-  titleStyles,
-} from "./styles";
+import { listItemStyles, posterStyles, titleStyles } from "./styles";
 import Image from "next/image";
+import Link from "next/link";
 
 const AnimeListItem = ({ anime }: { anime: AnimeItem }) => {
   const {
+    id,
     title: { romaji },
     coverImage: { large: image },
   } = anime;
   return (
-    <div css={listItemHoveredTitleStyles}>
+    <Link href={`/anime/${id}`}>
       <div css={listItemStyles}>
         <Image
           alt={romaji}
@@ -24,7 +21,7 @@ const AnimeListItem = ({ anime }: { anime: AnimeItem }) => {
         />
         <h2 css={titleStyles}>{romaji}</h2>
       </div>
-    </div>
+    </Link>
   );
 };
 

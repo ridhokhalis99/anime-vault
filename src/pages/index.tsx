@@ -3,9 +3,10 @@ import { GET_ALL_ANIME } from "../graphql/animeQueries";
 import AnimeList from "../components/AnimeList";
 import { Pagination } from "@mantine/core";
 import { usePagination } from "@mantine/hooks";
+import { indexStyles, paginationStyles } from "./styles";
 
-export default function Home() {
-  const { setPage, active } = usePagination({
+const Home = () => {
+  const { active, setPage } = usePagination({
     initialPage: 1,
     total: 100,
   });
@@ -17,17 +18,16 @@ export default function Home() {
   const animes = data?.Page?.media || [];
 
   return (
-    <main>
+    <main css={indexStyles}>
       <AnimeList animes={animes} loading={loading} />
       <Pagination
         total={100}
         onChange={setPage}
         withControls
-        style={{
-          display: "flex",
-          justifyContent: "center",
-        }}
+        css={paginationStyles}
       />
     </main>
   );
-}
+};
+
+export default Home;

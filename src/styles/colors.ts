@@ -1,7 +1,13 @@
 const colors = {
-  grey100: "#F5F7FA",
-  grey500: "#748899",
-  grey900: "#516170",
+  grey100: "#e1e8ec",
+  grey200: "#c7d2da",
+  grey300: "#9fb2c1",
+  grey400: "#718a9f",
+  grey500: "#556f85",
+  grey600: "#4a5d70",
+  grey700: "#393E46",
+  grey900: "#222831",
+  primary900: "#00ADB5",
 };
 
 export default colors;
