@@ -12,11 +12,10 @@ export const actionIconStyle = css`
 
 export const notificationStyle = css`
   position: absolute;
-  top: -4px;
-  right: -4px;
+  top: -7px;
+  right: -7px;
   background-color: ${colors.secondary900};
-  width: 20px;
-  height: 20px;
+  padding: 4px;
   border-radius: 50%;
   display: grid;
   place-items: center;

@@ -5,6 +5,8 @@ import { Pagination } from "@mantine/core";
 import { usePagination } from "@mantine/hooks";
 import { indexStyles, paginationStyles } from "./styles";
 import StashBox from "@/components/StashBox";
+import StashBoxModal from "@/components/StashBoxModal";
+import { useDisclosure } from "@mantine/hooks";
 
 const Home = () => {
   const { active, setPage } = usePagination({
@@ -15,6 +17,8 @@ const Home = () => {
   const { loading, data } = useQuery(GET_ALL_ANIME, {
     variables: { page: active, perPage: 10 },
   });
+
+  const [opened, { toggle }] = useDisclosure();
 
   const animes = data?.Page?.media || [];
 
@@ -27,7 +31,8 @@ const Home = () => {
         withControls
         css={paginationStyles}
       />
-      <StashBox />
+      <StashBox toggleModal={toggle} />
+      <StashBoxModal opened={opened} toggle={toggle} />
     </main>
   );
 };
