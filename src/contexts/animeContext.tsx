@@ -13,6 +13,8 @@ interface AnimeContextProps {
   checkInStashBox: (anime: AnimeItem) => boolean;
   addCollection: (collectionName: string) => void;
   deleteCollection: (collectionId: number) => void;
+  getCollectionById: (collectionId: number) => Collection | undefined;
+  removeAnimeFromCollection: (collectionId: number, animeId: number) => void;
 }
 
 export const AnimeContext = createContext({} as AnimeContextProps);
@@ -72,6 +74,24 @@ export const AnimeProvider = ({ children }: { children: ReactNode }) => {
     );
   };
 
+  const getCollectionById = (collectionId: number) => {
+    return collections.find((collection) => collection.id === collectionId);
+  };
+
+  const removeAnimeFromCollection = (collectionId: number, animeId: number) => {
+    const collection = getCollectionById(collectionId);
+    if (!collection) return;
+    const newCollection = {
+      ...collection,
+      animes: collection.animes.filter((anime) => anime.id !== animeId),
+    };
+    setCollections(
+      collections.map((collection) =>
+        collection.id === collectionId ? newCollection : collection
+      )
+    );
+  };
+
   const value = {
     collections,
     setCollections,
@@ -82,6 +102,8 @@ export const AnimeProvider = ({ children }: { children: ReactNode }) => {
     checkInStashBox,
     addCollection,
     deleteCollection,
+    getCollectionById,
+    removeAnimeFromCollection,
   };
 
   return (

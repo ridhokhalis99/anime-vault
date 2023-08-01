@@ -3,7 +3,7 @@ import { GET_ALL_ANIME } from "../graphql/animeQueries";
 import AnimeList from "../components/AnimeList";
 import { Pagination } from "@mantine/core";
 import { usePagination } from "@mantine/hooks";
-import { indexStyle, paginationStyle, titleStyle } from "../styles/styles";
+import { indexStyle, paginationStyle, titleStyle } from "@/styles/styles";
 import StashBox from "@/components/StashBox";
 import StashBoxModal from "@/components/StashBoxModal";
 import { useDisclosure } from "@mantine/hooks";
