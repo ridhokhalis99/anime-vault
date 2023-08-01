@@ -3,18 +3,31 @@ import Image from "next/image";
 import { Collection } from "@/types";
 import { isEmpty } from "lodash";
 import colors from "@/styles/colors";
-import { IconMoodSad } from "@tabler/icons-react";
+import { IconMoodSad, IconTrash } from "@tabler/icons-react";
 import {
+  bottomCardContainerStyle,
   emptyCardStyle,
   emptyTextStyle,
   stackedCardsStyle,
   titleStyle,
+  trashIconStyle,
 } from "./styles";
+import { useAnime } from "@/contexts/animeContext";
+import Link from "next/link";
 
 const CollectionItem = ({ collection }: { collection: Collection }) => {
   const { animes, title } = collection;
+  const { deleteCollection } = useAnime();
+
+  const handleDeleteCollection = (
+    event: React.MouseEvent<SVGSVGElement, MouseEvent>
+  ) => {
+    event.preventDefault();
+    deleteCollection(collection.id);
+  };
+
   return (
-    <div css={stackedCardsStyle}>
+    <Link href={`/collection/${collection.id}`} css={stackedCardsStyle}>
       {isEmpty(animes) ? (
         <div css={emptyCardStyle}>
           <p css={emptyTextStyle}>Sorry, no anime in this collection yet.</p>
@@ -42,10 +55,17 @@ const CollectionItem = ({ collection }: { collection: Collection }) => {
           );
         })
       )}
-      <h2 css={titleStyle}>
-        {title} ({animes.length})
-      </h2>
-    </div>
+      <div css={bottomCardContainerStyle}>
+        <h2 css={titleStyle}>
+          {title} ({animes.length})
+        </h2>
+        <IconTrash
+          css={trashIconStyle}
+          size={16}
+          onClick={handleDeleteCollection}
+        />
+      </div>
+    </Link>
   );
 };
 

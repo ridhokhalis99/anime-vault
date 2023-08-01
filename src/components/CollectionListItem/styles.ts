@@ -41,7 +41,6 @@ export const cardImageStyle = css`
 `;
 
 export const titleStyle = css`
-  margin-top: 316px;
   font-size: 14px;
   font-weight: 500;
   color: ${colors.grey500};
@@ -52,4 +51,20 @@ export const titleStyle = css`
   -webkit-box-orient: vertical;
   text-overflow: ellipsis;
   transition: all 0.2s ease-in-out;
+`;
+
+export const bottomCardContainerStyle = css`
+  margin-top: 316px;
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const trashIconStyle = css`
+  cursor: pointer;
+  color: ${colors.grey500};
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: ${colors.grey900};
+  }
 `;
