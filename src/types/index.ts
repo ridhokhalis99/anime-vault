@@ -12,3 +12,9 @@ export interface AnimeItem {
     large: string;
   };
 }
+
+export interface Collection {
+  id: number;
+  title: string;
+  animes: AnimeItem[];
+}

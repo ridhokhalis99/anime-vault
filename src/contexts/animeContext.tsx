@@ -1,11 +1,11 @@
-import { AnimeItem } from "@/types";
+import { AnimeItem, Collection } from "@/types";
 import { isEmpty } from "lodash";
 import { createContext, useContext, useState, useEffect } from "react";
 import { ReactNode } from "react";
 
 interface AnimeContextProps {
-  collections: AnimeItem[];
-  setCollections: React.Dispatch<React.SetStateAction<AnimeItem[]>>;
+  collections: Collection[];
+  setCollections: React.Dispatch<React.SetStateAction<Collection[]>>;
   stashBox: AnimeItem[];
   setStashBox: React.Dispatch<React.SetStateAction<AnimeItem[]>>;
   addToStashBox: (anime: AnimeItem) => void;
@@ -17,7 +17,7 @@ export const AnimeContext = createContext({} as AnimeContextProps);
 export const useAnimeContext = () => useContext(AnimeContext);
 
 export const AnimeProvider = ({ children }: { children: ReactNode }) => {
-  const [collections, setCollections] = useState<AnimeItem[]>([]);
+  const [collections, setCollections] = useState<Collection[]>([]);
   const [stashBox, setStashBox] = useState<AnimeItem[]>([]);
 
   useEffect(() => {
@@ -26,6 +26,7 @@ export const AnimeProvider = ({ children }: { children: ReactNode }) => {
   }, [stashBox]);
 
   useEffect(() => {
+    if (isEmpty(collections)) return;
     localStorage.setItem("collectionsAnimes", JSON.stringify(collections));
   }, [collections]);
 

@@ -18,14 +18,21 @@ import {
 const StashBoxModal = ({
   opened,
   toggle,
+  toggleAddToCollectionModal,
 }: {
   opened: boolean;
   toggle: () => void;
+  toggleAddToCollectionModal: () => void;
 }) => {
   const { stashBox, removeFromStashBox } = useAnime();
 
   const handleRemove = (anime: AnimeItem) => {
     removeFromStashBox(anime);
+  };
+
+  const handleAddToCollection = () => {
+    toggle();
+    toggleAddToCollectionModal();
   };
 
   useEffect(() => {
@@ -45,6 +52,7 @@ const StashBoxModal = ({
           <p css={titleStyle}>Anime stash box</p>
         </div>
       }
+      withOverlay
     >
       <div css={listContainerStyle}>
         {stashBox.map((anime) => (
@@ -58,7 +66,11 @@ const StashBoxModal = ({
           </div>
         ))}
       </div>
-      <Button css={buttonStyles} leftIcon={<IconBookmarks size={18} />}>
+      <Button
+        css={buttonStyles}
+        leftIcon={<IconBookmarks size={18} />}
+        onClick={handleAddToCollection}
+      >
         Add to collection ({stashBox.length})
       </Button>
     </Modal>
