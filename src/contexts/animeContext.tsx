@@ -11,6 +11,7 @@ interface AnimeContextProps {
   addToStashBox: (anime: AnimeItem) => void;
   removeFromStashBox: (anime: AnimeItem) => void;
   checkInStashBox: (anime: AnimeItem) => boolean;
+  addCollection: (collectionName: string) => void;
 }
 
 export const AnimeContext = createContext({} as AnimeContextProps);
@@ -55,6 +56,15 @@ export const AnimeProvider = ({ children }: { children: ReactNode }) => {
     return stashBox.some((item) => item.id === anime.id);
   };
 
+  const addCollection = (collectionName: string) => {
+    const newCollection = {
+      id: Date.now(),
+      title: collectionName,
+      animes: [],
+    };
+    setCollections([...collections, newCollection]);
+  };
+
   const value = {
     collections,
     setCollections,
@@ -63,6 +73,7 @@ export const AnimeProvider = ({ children }: { children: ReactNode }) => {
     addToStashBox,
     removeFromStashBox,
     checkInStashBox,
+    addCollection,
   };
 
   return (

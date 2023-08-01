@@ -15,12 +15,14 @@ export const Navbar = () => {
         <Link css={logoLinkStyles} href="/">
           AnimeVault
         </Link>
-        <Button
-          variant="light"
-          leftIcon={<IconBookmarks size={18} color={colors.primary900} />}
-        >
-          Collections
-        </Button>
+        <Link href="/collection">
+          <Button
+            variant="light"
+            leftIcon={<IconBookmarks size={18} color={colors.primary900} />}
+          >
+            Collections
+          </Button>
+        </Link>
       </div>
     </div>
   );

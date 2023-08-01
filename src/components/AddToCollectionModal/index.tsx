@@ -43,17 +43,11 @@ const AddToCollectionModal = ({
   toggle: () => void;
 }) => {
   const [isShowInput, setIsShowInput] = useState(false);
-  const { collections, setCollections, stashBox, setStashBox } = useAnime();
+  const { collections, setCollections, stashBox, setStashBox, addCollection } =
+    useAnime();
 
   const handleFormSubmit = (collectionName: string) => {
-    setCollections([
-      ...collections,
-      {
-        id: Date.now(),
-        title: collectionName,
-        animes: [],
-      },
-    ]);
+    addCollection(collectionName);
     setIsShowInput(false);
   };
 
