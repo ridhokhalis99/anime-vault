@@ -16,6 +16,5 @@ export const paginationStyle = css`
 export const titleStyle = css`
   font-size: 24px;
   font-weight: 500;
-  margin: 32px 0px 16px;
   color: ${colors.grey900};
 `;

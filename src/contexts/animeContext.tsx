@@ -15,6 +15,7 @@ interface AnimeContextProps {
   deleteCollection: (collectionId: number) => void;
   getCollectionById: (collectionId: number) => Collection | undefined;
   removeAnimeFromCollection: (collectionId: number, animeId: number) => void;
+  updateCollection: (collectionId: number, newTitle: string) => void;
 }
 
 export const AnimeContext = createContext({} as AnimeContextProps);
@@ -92,6 +93,20 @@ export const AnimeProvider = ({ children }: { children: ReactNode }) => {
     );
   };
 
+  const updateCollection = (collectionId: number, newTitle: string) => {
+    const collection = getCollectionById(collectionId);
+    if (!collection) return;
+    const newCollection = {
+      ...collection,
+      title: newTitle,
+    };
+    setCollections(
+      collections.map((collection) =>
+        collection.id === collectionId ? newCollection : collection
+      )
+    );
+  };
+
   const value = {
     collections,
     setCollections,
@@ -104,6 +119,7 @@ export const AnimeProvider = ({ children }: { children: ReactNode }) => {
     deleteCollection,
     getCollectionById,
     removeAnimeFromCollection,
+    updateCollection,
   };
 
   return (
