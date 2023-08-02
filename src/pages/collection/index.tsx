@@ -7,11 +7,11 @@ const CollectionListPage = () => {
   const { addCollection } = useAnime();
 
   return (
-    <div css={indexStyle}>
+    <main css={indexStyle}>
       <h1 css={titleStyle}>My collections</h1>
       <CreateCollectionForm onFormSubmit={addCollection} />
       <CollectionList />
-    </div>
+    </main>
   );
 };
 

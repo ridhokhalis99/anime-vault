@@ -11,7 +11,7 @@ export const stackedCardsStyle = css`
   }
 `;
 
-export const emptyCardStyle = css`
+export const emptyCardStyle = `
   position: absolute;
   left: 0px;
   top: 0px;
@@ -59,12 +59,17 @@ export const bottomCardContainerStyle = css`
   justify-content: space-between;
 `;
 
-export const trashIconStyle = css`
-  cursor: pointer;
-  color: ${colors.grey500};
-  transition: color 0.2s ease;
+export const bottomButtonContainerStyle = css`
+  display: flex;
+  gap: 8px;
+`;
 
-  &:hover {
-    color: ${colors.grey900};
-  }
+export const formContainerStyle = `
+  margin-top: 320px;
+  display: block
+`;
+
+export const formButtonContainerStyle = `
+display: flex;
+margin-top: 8px;
 `;

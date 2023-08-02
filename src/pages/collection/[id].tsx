@@ -23,7 +23,7 @@ const CollectionDetailPage = () => {
   const onCancel = () => setIsShowInput(false);
 
   return (
-    <div css={indexStyle}>
+    <main css={indexStyle}>
       {isShowInput ? (
         <EditCollectionForm
           onFormSubmit={onFormSubmit}
@@ -50,7 +50,7 @@ const CollectionDetailPage = () => {
         </div>
       )}
       <AnimeList animes={collection?.animes} />
-    </div>
+    </main>
   );
 };
 

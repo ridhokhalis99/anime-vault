@@ -39,7 +39,7 @@ const AnimeDetailPage = () => {
   } = animeDetail;
   const parsedDescription = ReactHtmlParser(description);
   return (
-    <div>
+    <main>
       <div css={bannerContainerStyles}>
         <div css={bannerOverlayStyles} />
         <Image src={bannerImage} alt={romaji} layout="fill" />
@@ -79,7 +79,7 @@ const AnimeDetailPage = () => {
           </div>
         </div>
       </div>
-    </div>
+    </main>
   );
 };
 

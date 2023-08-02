@@ -1,16 +1,26 @@
 import { useForm } from "@mantine/form";
-import { updateCollectionContainerStyle, collectionInputStyle } from "./styles";
+import {
+  updateCollectionContainerStyle,
+  collectionInputStyle,
+  buttonContainerStyle,
+  buttonStyle,
+} from "./styles";
 import { TextInput, Button } from "@mantine/core";
 import { IconBookmark } from "@tabler/icons-react";
+import { css } from "@emotion/react";
 
 const EditCollectionForm = ({
   onFormSubmit,
   onCancel,
   defaultValue,
+  containerCss,
+  buttonContainerCss,
 }: {
   onFormSubmit: (collectionName: string) => void;
   onCancel: () => void;
   defaultValue: string | undefined;
+  containerCss?: string;
+  buttonContainerCss?: string;
 }) => {
   const form = useForm({
     initialValues: {
@@ -37,7 +47,10 @@ const EditCollectionForm = ({
 
   return (
     <form
-      css={updateCollectionContainerStyle}
+      css={css`
+        ${updateCollectionContainerStyle}
+        ${containerCss}
+      `}
       onSubmit={form.onSubmit(handleFormSubmit)}
     >
       <TextInput
@@ -46,10 +59,19 @@ const EditCollectionForm = ({
         css={collectionInputStyle}
         {...form.getInputProps("collectionName")}
       />
-      <Button color="gray" onClick={onCancel}>
-        Cancel
-      </Button>
-      <Button type="submit">Update</Button>
+      <div
+        css={css`
+          ${buttonContainerStyle}
+          ${buttonContainerCss}
+        `}
+      >
+        <Button color="gray" onClick={onCancel} css={buttonStyle}>
+          Cancel
+        </Button>
+        <Button type="submit" css={buttonStyle}>
+          Update
+        </Button>
+      </div>
     </form>
   );
 };
