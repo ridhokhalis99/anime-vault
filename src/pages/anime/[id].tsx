@@ -2,7 +2,6 @@ import { GET_ANIME_BY_ID } from "@/graphql/animeQueries";
 import { useQuery } from "@apollo/client";
 import { useRouter } from "next/router";
 import Image from "next/image";
-import ReactHtmlParser from "react-html-parser";
 import {
   bannerContainerStyle,
   bannerOverlayStyle,
@@ -11,16 +10,16 @@ import {
   imageStyle,
   textContainerStyle,
   titleStyle,
-  descriptionStyle,
   imageButtonContainerStyle,
   buttonStyle,
-  badgeContainerStyle,
-  tagTextStyle,
-} from "./styles";
-import { Button, Badge } from "@mantine/core";
+} from "../../pageComponents/animeDetail/styles";
+import { Button } from "@mantine/core";
 import { IconBookmarks } from "@tabler/icons-react";
 import AddToCollectionModal from "@/components/AddToCollectionModal";
 import { useDisclosure } from "@mantine/hooks";
+import Genres from "@/pageComponents/animeDetail/Genres";
+import Description from "@/pageComponents/animeDetail/Description";
+import Tags from "@/pageComponents/animeDetail/Tags";
 
 const AnimeDetailPage = () => {
   const router = useRouter();
@@ -39,64 +38,51 @@ const AnimeDetailPage = () => {
     title: { romaji },
     bannerImage,
     description,
-    coverImage: { extraLarge },
+    coverImage: { extraLarge, large },
     genres,
     tags,
   } = animeDetail;
-  const parsedDescription = ReactHtmlParser(description);
+
+  const coverImage = extraLarge || large || "";
+
   return (
-    <>
-      <main>
-        <div css={bannerContainerStyle}>
-          <div css={bannerOverlayStyle} />
-          <Image src={bannerImage} alt={romaji} layout="fill" />
-        </div>
-        <div css={detailContainerStyle}>
-          <div css={headerContainerStyle}>
-            <div css={imageButtonContainerStyle}>
-              <Image
-                src={extraLarge}
-                alt={romaji}
-                height={300}
-                width={200}
-                css={imageStyle}
-              />
-              <Button
-                css={buttonStyle}
-                leftIcon={<IconBookmarks size={18} />}
-                onClick={toggleAddToCollectionModal}
-              >
-                Add to collection
-              </Button>
-            </div>
-            <div css={textContainerStyle}>
-              <h1 css={titleStyle}>{romaji}</h1>
-              <div css={badgeContainerStyle}>
-                {genres.map((category: any) => (
-                  <Badge key={category}>{category}</Badge>
-                ))}
-              </div>
-              <p css={descriptionStyle}>{parsedDescription}</p>
-              <div>
-                <h3 css={tagTextStyle}>Tags</h3>
-                <div css={badgeContainerStyle}>
-                  {tags.map((tag: any) => (
-                    <Badge key={tag.name} color="gray" radius={0}>
-                      {tag.name}
-                    </Badge>
-                  ))}
-                </div>
-              </div>
-            </div>
+    <main>
+      <div css={bannerContainerStyle}>
+        <div css={bannerOverlayStyle} />
+        {bannerImage && <Image src={bannerImage} alt={romaji} layout="fill" />}
+      </div>
+      <div css={detailContainerStyle}>
+        <div css={headerContainerStyle}>
+          <div css={imageButtonContainerStyle}>
+            <Image
+              src={coverImage}
+              alt={romaji}
+              height={300}
+              width={200}
+              css={imageStyle}
+            />
+            <Button
+              css={buttonStyle}
+              leftIcon={<IconBookmarks size={18} />}
+              onClick={toggleAddToCollectionModal}
+            >
+              Add to collection
+            </Button>
+          </div>
+          <div css={textContainerStyle}>
+            <h1 css={titleStyle}>{romaji}</h1>
+            <Genres genres={genres} />
+            <Description description={description} />
+            <Tags tags={tags} />
           </div>
         </div>
-      </main>
+      </div>
       <AddToCollectionModal
         opened={openedAddToCollectionModal}
         toggle={toggleAddToCollectionModal}
         animes={[animeDetail]}
       />
-    </>
+    </main>
   );
 };
 

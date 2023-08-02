@@ -16,7 +16,7 @@ const HomePage = () => {
     total: 100,
   });
 
-  const { loading, data } = useQuery(GET_ALL_ANIME, {
+  const { loading, data, error } = useQuery(GET_ALL_ANIME, {
     variables: { page: active, perPage: 10 },
   });
 
@@ -28,6 +28,8 @@ const HomePage = () => {
   const { stashBox } = useAnime();
 
   const animes = data?.Page?.media || [];
+
+  if (error) return `Error! ${error}`;
 
   return (
     <main css={indexStyle}>

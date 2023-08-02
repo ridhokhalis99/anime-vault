@@ -13,6 +13,23 @@ export interface AnimeItem {
   };
 }
 
+export interface AnimeDetail {
+  id: number;
+  title: {
+    romaji: string;
+  };
+  bannerImage: string | null;
+  description: string;
+  coverImage: {
+    extraLarge: string | null;
+    large: string | null;
+  };
+  genres: string[];
+  tags: {
+    name: string;
+  }[];
+}
+
 export interface Collection {
   id: number;
   title: string;

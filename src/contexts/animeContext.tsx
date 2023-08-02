@@ -1,5 +1,4 @@
 import { AnimeItem, Collection } from "@/types";
-import { isEmpty, set } from "lodash";
 import { createContext, useContext, useState, useEffect } from "react";
 import { ReactNode } from "react";
 
@@ -133,7 +132,7 @@ export const AnimeProvider = ({ children }: { children: ReactNode }) => {
       animes: [...collection.animes, ...filteredAnimes],
     };
 
-    setCollections(
+    setCollections((collections) =>
       collections.map((collection) =>
         collection.id === collectionId ? newCollection : collection
       )

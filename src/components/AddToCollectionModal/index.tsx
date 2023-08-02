@@ -45,7 +45,7 @@ const AddToCollectionModal = ({
   animes: AnimeItem[];
 }) => {
   const [isShowInput, setIsShowInput] = useState(false);
-  const { collections, stashBox, setStashBox, addCollection, addToCollection } =
+  const { collections, setStashBox, addCollection, addToCollection } =
     useAnime();
 
   const handleFormSubmit = (collectionName: string) => {
