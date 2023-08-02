@@ -35,6 +35,7 @@ export const GET_ANIME_BY_ID = gql`
       }
       coverImage {
         extraLarge
+        large
       }
       bannerImage
       startDate {

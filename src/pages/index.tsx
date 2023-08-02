@@ -8,6 +8,7 @@ import StashBox from "@/components/StashBox";
 import StashBoxModal from "@/components/StashBoxModal";
 import { useDisclosure } from "@mantine/hooks";
 import AddToCollectionModal from "@/components/AddToCollectionModal";
+import { useAnime } from "@/contexts/animeContext";
 
 const HomePage = () => {
   const { active, setPage } = usePagination({
@@ -23,6 +24,8 @@ const HomePage = () => {
     useDisclosure();
   const [openedAddToCollectionModal, { toggle: toggleAddToCollectionModal }] =
     useDisclosure();
+
+  const { stashBox } = useAnime();
 
   const animes = data?.Page?.media || [];
 
@@ -45,6 +48,7 @@ const HomePage = () => {
       <AddToCollectionModal
         opened={openedAddToCollectionModal}
         toggle={toggleAddToCollectionModal}
+        animes={stashBox}
       />
     </main>
   );

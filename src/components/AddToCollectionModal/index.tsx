@@ -14,7 +14,7 @@ import {
   rowStyle,
   newCollectionButtonStyle,
 } from "./styles";
-import { Collection } from "@/types";
+import { AnimeItem, Collection } from "@/types";
 
 const CollectionRow = ({
   collection,
@@ -38,19 +38,15 @@ const CollectionRow = ({
 const AddToCollectionModal = ({
   opened,
   toggle,
+  animes,
 }: {
   opened: boolean;
   toggle: () => void;
+  animes: AnimeItem[];
 }) => {
   const [isShowInput, setIsShowInput] = useState(false);
-  const {
-    collections,
-    setCollections,
-    stashBox,
-    setStashBox,
-    addCollection,
-    addToCollection,
-  } = useAnime();
+  const { collections, stashBox, setStashBox, addCollection, addToCollection } =
+    useAnime();
 
   const handleFormSubmit = (collectionName: string) => {
     addCollection(collectionName);
@@ -58,7 +54,7 @@ const AddToCollectionModal = ({
   };
 
   const handleAddToCollection = (collectionId: number) => {
-    addToCollection(collectionId, stashBox);
+    addToCollection(collectionId, animes);
     setStashBox([]);
     toggle();
   };

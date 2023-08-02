@@ -11,7 +11,7 @@ export const stackedCardsStyle = css`
   }
 `;
 
-export const emptyCardStyle = `
+export const emptyCardStyle = css`
   position: absolute;
   left: 0px;
   top: 0px;
