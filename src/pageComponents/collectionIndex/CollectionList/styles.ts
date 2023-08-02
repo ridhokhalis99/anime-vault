@@ -21,5 +21,6 @@ export const collectionListStyle = css`
 
   @media (max-width: 600px) {
     grid-template-columns: 1fr;
+    justify-items: center;
   }
 `;

@@ -25,6 +25,10 @@ export const imageButtonContainerStyles = css`
   align-items: center;
   width: 200px;
   gap: 12px;
+
+  @media (max-width: 768px) {
+    margin: 0 auto;
+  }
 `;
 
 export const imageStyles = css`
@@ -36,9 +40,9 @@ export const buttonStyles = css`
 `;
 
 export const detailContainerStyles = css`
+  position: relative;
   margin: 0 auto;
   max-width: 1366px;
-  position: relative;
 `;
 
 export const headerContainerStyles = css`
@@ -47,6 +51,15 @@ export const headerContainerStyles = css`
   left: 0;
   z-index: 2;
   display: flex;
+
+  @media (max-width: 1366px) {
+    padding: 0px 24px;
+  }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    top: -240px;
+  }
 `;
 
 export const textContainerStyles = css`
@@ -55,6 +68,12 @@ export const textContainerStyles = css`
   display: flex;
   flex-direction: column;
   gap: 12px;
+
+  @media (max-width: 768px) {
+    margin-top: 24px;
+    margin-left: 0px;
+    text-align: center;
+  }
 `;
 
 export const titleStyles = css`
@@ -79,6 +98,10 @@ export const badgeContainerStyles = css`
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
+
+  @media (max-width: 768px) {
+    justify-content: center;
+  }
 `;
 
 export const tagTextStyles = css`

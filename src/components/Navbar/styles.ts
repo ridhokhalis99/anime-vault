@@ -16,7 +16,7 @@ export const navLinksContainerStyle = css`
   max-width: 1366px;
   margin: 0 auto;
 
-  @media (max-width: 1280px) {
+  @media (max-width: 1366px) {
     padding: 0px 24px;
   }
 `;
