@@ -12,7 +12,7 @@ import {
   rowStyle,
   titleAnimeStyle,
   trashIconStyle,
-  buttonStyles,
+  buttonStyle,
 } from "./styles";
 
 const StashBoxModal = ({
@@ -67,7 +67,7 @@ const StashBoxModal = ({
         ))}
       </div>
       <Button
-        css={buttonStyles}
+        css={buttonStyle}
         leftIcon={<IconBookmarks size={18} />}
         onClick={handleAddToCollection}
       >

@@ -73,7 +73,7 @@ export const trashIconStyle = css`
   }
 `;
 
-export const buttonStyles = css`
+export const buttonStyle = css`
   width: 100%;
   margin-top: 12px;
 `;

@@ -1,7 +1,7 @@
 import { css } from "@emotion/react";
 import colors from "@/styles/colors";
 
-export const listItemStyles = css`
+export const listItemStyle = css`
   display: grid;
   cursor: pointer;
   position: relative;
@@ -11,18 +11,18 @@ export const listItemStyles = css`
   }
 `;
 
-export const addStashStyles = css`
+export const addStashStyle = css`
   position: absolute;
   top: 8px;
   left: 8px;
   z-index: 5;
 `;
 
-export const posterStyles = css`
+export const posterStyle = css`
   border-radius: 8px;
 `;
 
-export const titleStyles = css`
+export const titleStyle = css`
   margin-top: 8px;
   font-size: 14px;
   font-weight: 500;

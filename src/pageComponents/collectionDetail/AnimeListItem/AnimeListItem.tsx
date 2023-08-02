@@ -1,9 +1,9 @@
 import { AnimeItem } from "@/types";
 import {
-  listItemStyles,
-  addStashStyles,
-  posterStyles,
-  titleStyles,
+  listItemStyle,
+  addStashStyle,
+  posterStyle,
+  titleStyle,
 } from "./styles";
 import Image from "next/image";
 import Link from "next/link";
@@ -30,9 +30,9 @@ const AnimeListItem = ({ anime }: { anime: AnimeItem }) => {
 
   return (
     <Link href={`/anime/${id}`}>
-      <div css={listItemStyles}>
+      <div css={listItemStyle}>
         <ActionIcon
-          css={addStashStyles}
+          css={addStashStyle}
           color="red"
           variant="light"
           onClick={handleRemove}
@@ -44,9 +44,9 @@ const AnimeListItem = ({ anime }: { anime: AnimeItem }) => {
           src={image}
           width={230}
           height={330}
-          css={posterStyles}
+          css={posterStyle}
         />
-        <h2 css={titleStyles}>{romaji}</h2>
+        <h2 css={titleStyle}>{romaji}</h2>
       </div>
     </Link>
   );

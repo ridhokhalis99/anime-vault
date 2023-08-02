@@ -1,5 +1,5 @@
 import { Skeleton } from "@mantine/core";
-import { skeletonItemStyles } from "./styles";
+import { skeletonItemStyle } from "./styles";
 
 const SkeletonList = () => {
   const POSTER_HEIGHT = 330;
@@ -14,7 +14,7 @@ const SkeletonList = () => {
         <Skeleton
           height={TITLE_HEIGHT}
           width={TITLE_WIDTH}
-          css={skeletonItemStyles}
+          css={skeletonItemStyle}
         />
       </div>
     ));

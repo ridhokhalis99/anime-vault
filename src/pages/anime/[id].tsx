@@ -4,18 +4,18 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 import ReactHtmlParser from "react-html-parser";
 import {
-  bannerContainerStyles,
-  bannerOverlayStyles,
-  detailContainerStyles,
-  headerContainerStyles,
-  imageStyles,
-  textContainerStyles,
-  titleStyles,
-  descriptionStyles,
-  imageButtonContainerStyles,
-  buttonStyles,
-  badgeContainerStyles,
-  tagTextStyles,
+  bannerContainerStyle,
+  bannerOverlayStyle,
+  detailContainerStyle,
+  headerContainerStyle,
+  imageStyle,
+  textContainerStyle,
+  titleStyle,
+  descriptionStyle,
+  imageButtonContainerStyle,
+  buttonStyle,
+  badgeContainerStyle,
+  tagTextStyle,
 } from "./styles";
 import { Button, Badge } from "@mantine/core";
 import { IconBookmarks } from "@tabler/icons-react";
@@ -47,39 +47,39 @@ const AnimeDetailPage = () => {
   return (
     <>
       <main>
-        <div css={bannerContainerStyles}>
-          <div css={bannerOverlayStyles} />
+        <div css={bannerContainerStyle}>
+          <div css={bannerOverlayStyle} />
           <Image src={bannerImage} alt={romaji} layout="fill" />
         </div>
-        <div css={detailContainerStyles}>
-          <div css={headerContainerStyles}>
-            <div css={imageButtonContainerStyles}>
+        <div css={detailContainerStyle}>
+          <div css={headerContainerStyle}>
+            <div css={imageButtonContainerStyle}>
               <Image
                 src={extraLarge}
                 alt={romaji}
                 height={300}
                 width={200}
-                css={imageStyles}
+                css={imageStyle}
               />
               <Button
-                css={buttonStyles}
+                css={buttonStyle}
                 leftIcon={<IconBookmarks size={18} />}
                 onClick={toggleAddToCollectionModal}
               >
                 Add to collection
               </Button>
             </div>
-            <div css={textContainerStyles}>
-              <h1 css={titleStyles}>{romaji}</h1>
-              <div css={badgeContainerStyles}>
+            <div css={textContainerStyle}>
+              <h1 css={titleStyle}>{romaji}</h1>
+              <div css={badgeContainerStyle}>
                 {genres.map((category: any) => (
                   <Badge key={category}>{category}</Badge>
                 ))}
               </div>
-              <p css={descriptionStyles}>{parsedDescription}</p>
+              <p css={descriptionStyle}>{parsedDescription}</p>
               <div>
-                <h3 css={tagTextStyles}>Tags</h3>
-                <div css={badgeContainerStyles}>
+                <h3 css={tagTextStyle}>Tags</h3>
+                <div css={badgeContainerStyle}>
                   {tags.map((tag: any) => (
                     <Badge key={tag.name} color="gray" radius={0}>
                       {tag.name}

@@ -1,7 +1,7 @@
 import { css } from "@emotion/react";
 import colors from "@/styles/colors";
 
-export const bannerContainerStyles = css`
+export const bannerContainerStyle = css`
   width: 100%;
   height: 400px;
   position: relative;
@@ -9,7 +9,7 @@ export const bannerContainerStyles = css`
   z-index: 1;
 `;
 
-export const bannerOverlayStyles = css`
+export const bannerOverlayStyle = css`
   position: absolute;
   top: 0;
   left: 0;
@@ -19,7 +19,7 @@ export const bannerOverlayStyles = css`
   z-index: 1;
 `;
 
-export const imageButtonContainerStyles = css`
+export const imageButtonContainerStyle = css`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,21 +31,21 @@ export const imageButtonContainerStyles = css`
   }
 `;
 
-export const imageStyles = css`
+export const imageStyle = css`
   border-radius: 8px;
 `;
 
-export const buttonStyles = css`
+export const buttonStyle = css`
   width: 100%;
 `;
 
-export const detailContainerStyles = css`
+export const detailContainerStyle = css`
   position: relative;
   margin: 0 auto;
   max-width: 1366px;
 `;
 
-export const headerContainerStyles = css`
+export const headerContainerStyle = css`
   position: absolute;
   top: -100px;
   left: 0;
@@ -62,7 +62,7 @@ export const headerContainerStyles = css`
   }
 `;
 
-export const textContainerStyles = css`
+export const textContainerStyle = css`
   margin-top: 124px;
   margin-left: 32px;
   display: flex;
@@ -76,13 +76,13 @@ export const textContainerStyles = css`
   }
 `;
 
-export const titleStyles = css`
+export const titleStyle = css`
   font-size: 32px;
   font-weight: bold;
   color: ${colors.grey900};
 `;
 
-export const descriptionStyles = css`
+export const descriptionStyle = css`
   font-size: 16px;
   color: ${colors.grey500};
   max-width: 1000px;
@@ -94,7 +94,7 @@ export const descriptionStyles = css`
   -webkit-box-orient: vertical;
 `;
 
-export const badgeContainerStyles = css`
+export const badgeContainerStyle = css`
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
@@ -104,7 +104,7 @@ export const badgeContainerStyles = css`
   }
 `;
 
-export const tagTextStyles = css`
+export const tagTextStyle = css`
   font-size: 16px;
   color: ${colors.grey500};
   margin-top: 8px;

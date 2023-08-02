@@ -1,6 +1,6 @@
 import { AnimeItem } from "@/types";
 import AnimeListItem from "../AnimeListItem";
-import { animeListStyles } from "./styles";
+import { listStyle } from "@/styles/styles";
 import SkeletonList from "../../../components/SkeletonList";
 
 const AnimeList = ({
@@ -11,7 +11,7 @@ const AnimeList = ({
   loading: boolean;
 }) => {
   return (
-    <div css={animeListStyles}>
+    <div css={listStyle}>
       {loading && <SkeletonList />}
       {animes.map((anime, index) => (
         <AnimeListItem key={index} anime={anime} />
