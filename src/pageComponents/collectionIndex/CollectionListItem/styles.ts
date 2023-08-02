@@ -57,6 +57,7 @@ export const bottomCardContainerStyle = css`
   margin-top: 316px;
   display: flex;
   justify-content: space-between;
+  width: 200px;
 `;
 
 export const bottomButtonContainerStyle = css`
@@ -70,6 +71,6 @@ export const formContainerStyle = `
 `;
 
 export const formButtonContainerStyle = `
-display: flex;
-margin-top: 8px;
+  display: flex;
+  margin-top: 8px;
 `;

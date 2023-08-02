@@ -4,7 +4,7 @@ import {
   addStashStyles,
   posterStyles,
   titleStyles,
-} from "./animeListItemStyles";
+} from "./styles";
 import Image from "next/image";
 import Link from "next/link";
 import { ActionIcon } from "@mantine/core";

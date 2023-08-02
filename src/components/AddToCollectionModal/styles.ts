@@ -11,6 +11,12 @@ export const titleStyle = css`
   font-size: 18px;
   font-weight: 500;
   color: ${colors.grey900};
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  transition: all 0.2s ease-in-out;
 `;
 
 export const listContainerStyle = css`

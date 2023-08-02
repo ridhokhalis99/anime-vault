@@ -8,6 +8,12 @@ export const actionIconStyle = css`
   width: 50px;
   height: 50px;
   border-radius: 50%;
+  z-index: 100;
+
+  @media (max-width: 768px) {
+    bottom: 20px;
+    right: 20px;
+  }
 `;
 
 export const notificationStyle = css`

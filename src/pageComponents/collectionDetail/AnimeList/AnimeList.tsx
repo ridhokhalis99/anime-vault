@@ -1,6 +1,6 @@
 import { AnimeItem } from "@/types";
-import AnimeListItem from "./AnimeListItem";
-import { animeListStyles } from "./animeListStyles";
+import AnimeListItem from "../AnimeListItem/AnimeListItem";
+import { animeListStyles } from "./styles";
 
 const AnimeList = ({ animes }: { animes: AnimeItem[] | undefined }) => {
   return (

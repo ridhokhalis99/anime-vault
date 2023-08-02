@@ -14,7 +14,7 @@ export const listItemStyles = css`
 export const addStashStyles = css`
   position: absolute;
   top: 8px;
-  right: 8px;
+  left: 8px;
   z-index: 5;
 `;
 

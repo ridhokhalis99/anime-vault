@@ -1,4 +1,4 @@
-import AnimeList from "@/pageComponents/CollectionDetail/AnimeList";
+import AnimeList from "@/pageComponents/collectionDetail/AnimeList/AnimeList";
 import { useAnime } from "@/contexts/animeContext";
 import { indexStyle, titleStyle } from "@/styles/styles";
 import { useRouter } from "next/router";

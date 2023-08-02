@@ -55,6 +55,12 @@ export const titleAnimeStyle = css`
   font-size: 16px;
   color: ${colors.grey500};
   cursor: default;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  transition: all 0.2s ease-in-out;
 `;
 
 export const trashIconStyle = css`
