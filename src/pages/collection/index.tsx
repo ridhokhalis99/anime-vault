@@ -1,9 +1,9 @@
-import CollectionList from "@/components/CollectionList";
+import CollectionList from "@/pageComponents/collectionIndex/CollectionList";
 import { indexStyle, titleStyle } from "@/styles/styles";
 import CreateCollectionForm from "@/components/CreateCollectionForm";
 import { useAnime } from "@/contexts/animeContext";
 
-const CollectionListPage = () => {
+const CollectionIndexPage = () => {
   const { addCollection } = useAnime();
 
   return (
@@ -15,4 +15,4 @@ const CollectionListPage = () => {
   );
 };
 
-export default CollectionListPage;
+export default CollectionIndexPage;

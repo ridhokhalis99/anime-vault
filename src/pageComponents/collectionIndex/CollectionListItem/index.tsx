@@ -18,7 +18,7 @@ import { useAnime } from "@/contexts/animeContext";
 import Link from "next/link";
 import { ActionIcon } from "@mantine/core";
 import { useState } from "react";
-import EditCollectionForm from "../EditCollectionForm";
+import EditCollectionForm from "../../../components/EditCollectionForm";
 
 const CollectionItem = ({ collection }: { collection: Collection }) => {
   const [isShowInput, setIsShowInput] = useState(false);

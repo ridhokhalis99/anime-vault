@@ -1,6 +1,6 @@
 import { useQuery } from "@apollo/client";
 import { GET_ALL_ANIME } from "../graphql/animeQueries";
-import AnimeList from "../components/AnimeList";
+import AnimeList from "../pageComponents/animeIndex/AnimeList";
 import { Pagination } from "@mantine/core";
 import { usePagination } from "@mantine/hooks";
 import { indexStyle, paginationStyle, titleStyle } from "@/styles/styles";

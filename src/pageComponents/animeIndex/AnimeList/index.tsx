@@ -1,7 +1,7 @@
 import { AnimeItem } from "@/types";
 import AnimeListItem from "../AnimeListItem";
 import { animeListStyles } from "./styles";
-import SkeletonList from "../SkeletonList";
+import SkeletonList from "../../../components/SkeletonList";
 
 const AnimeList = ({
   animes,
