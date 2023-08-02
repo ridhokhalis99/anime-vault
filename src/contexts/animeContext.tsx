@@ -16,6 +16,7 @@ interface AnimeContextProps {
   getCollectionById: (collectionId: number) => Collection | undefined;
   removeAnimeFromCollection: (collectionId: number, animeId: number) => void;
   updateCollection: (collectionId: number, newTitle: string) => void;
+  addToCollection: (collectionId: number, animes: AnimeItem[]) => void;
 }
 
 export const AnimeContext = createContext({} as AnimeContextProps);
@@ -107,6 +108,26 @@ export const AnimeProvider = ({ children }: { children: ReactNode }) => {
     );
   };
 
+  const addToCollection = (collectionId: number, animes: AnimeItem[]) => {
+    const collection = getCollectionById(collectionId);
+    if (!collection) return;
+
+    const filteredAnimes = animes.filter(
+      (anime) => !collection.animes.some((item) => item.id === anime.id)
+    );
+
+    const newCollection = {
+      ...collection,
+      animes: [...collection.animes, ...filteredAnimes],
+    };
+
+    setCollections(
+      collections.map((collection) =>
+        collection.id === collectionId ? newCollection : collection
+      )
+    );
+  };
+
   const value = {
     collections,
     setCollections,
@@ -120,6 +141,7 @@ export const AnimeProvider = ({ children }: { children: ReactNode }) => {
     getCollectionById,
     removeAnimeFromCollection,
     updateCollection,
+    addToCollection,
   };
 
   return (

@@ -43,8 +43,14 @@ const AddToCollectionModal = ({
   toggle: () => void;
 }) => {
   const [isShowInput, setIsShowInput] = useState(false);
-  const { collections, setCollections, stashBox, setStashBox, addCollection } =
-    useAnime();
+  const {
+    collections,
+    setCollections,
+    stashBox,
+    setStashBox,
+    addCollection,
+    addToCollection,
+  } = useAnime();
 
   const handleFormSubmit = (collectionName: string) => {
     addCollection(collectionName);
@@ -52,17 +58,7 @@ const AddToCollectionModal = ({
   };
 
   const handleAddToCollection = (collectionId: number) => {
-    setCollections((prev) => {
-      return prev.map((collection) => {
-        if (collection.id === collectionId) {
-          return {
-            ...collection,
-            animes: [...collection.animes, ...stashBox],
-          };
-        }
-        return collection;
-      });
-    });
+    addToCollection(collectionId, stashBox);
     setStashBox([]);
     toggle();
   };
