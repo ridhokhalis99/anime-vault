@@ -5,6 +5,7 @@ import { apolloClient } from "@/lib/apolloClient";
 import { MantineProvider } from "@mantine/core";
 import Layout from "./layout";
 import { AnimeProvider } from "@/contexts/animeContext";
+import colors from "@/styles/colors";
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
@@ -14,7 +15,9 @@ const App = ({ Component, pageProps }: AppProps) => {
           withGlobalStyles
           withNormalizeCSS
           theme={{
-            colorScheme: "light",
+            colors: {
+              primary: [colors.primary900],
+            },
           }}
         >
           <Layout>

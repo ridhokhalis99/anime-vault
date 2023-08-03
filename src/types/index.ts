@@ -5,7 +5,6 @@ export interface AnimeItem {
   };
   status: string;
   description: string;
-  averageScore: number;
   genres: string[];
   type: string;
   coverImage: {

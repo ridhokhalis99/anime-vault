@@ -7,7 +7,9 @@ const withPWA = require("next-pwa")({
 
 module.exports = withPWA({
   reactStrictMode: true,
-  amp: true,
+  amp: {
+    canonicalBase: "https://anilist.co",
+  },
   images: {
     domains: ["s4.anilist.co"],
   },
