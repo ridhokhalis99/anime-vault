@@ -11,6 +11,7 @@ import { ActionIcon } from "@mantine/core";
 import { IconTrash } from "@tabler/icons-react";
 import { useAnime } from "@/contexts/animeContext";
 import { useRouter } from "next/router";
+import { useMediaQuery } from "@mantine/hooks";
 
 const AnimeListItem = ({ anime }: { anime: AnimeItem }) => {
   const { removeAnimeFromCollection } = useAnime();
@@ -20,8 +21,12 @@ const AnimeListItem = ({ anime }: { anime: AnimeItem }) => {
   const {
     id,
     title: { romaji },
-    coverImage: { large: image },
+    coverImage: { large, medium },
   } = anime;
+
+  const isMobile = useMediaQuery("(max-width: 768px)");
+
+  const image = isMobile ? medium : large;
 
   const handleRemove = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();

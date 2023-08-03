@@ -15,6 +15,7 @@ export const GET_ALL_ANIME = gql`
         type
         coverImage {
           large
+          medium
         }
       }
       pageInfo {

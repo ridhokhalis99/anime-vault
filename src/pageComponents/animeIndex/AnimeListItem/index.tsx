@@ -10,13 +10,17 @@ import Link from "next/link";
 import { ActionIcon } from "@mantine/core";
 import { IconPlaylistAdd, IconPlaylistX } from "@tabler/icons-react";
 import { useAnime } from "@/contexts/animeContext";
+import { useMediaQuery } from "@mantine/hooks";
 
 const AnimeListItem = ({ anime }: { anime: AnimeItem }) => {
   const {
     id,
     title: { romaji },
-    coverImage: { large: image },
+    coverImage: { large, medium },
   } = anime;
+
+  const isMobile = useMediaQuery("(max-width: 768px)");
+  const image = isMobile ? medium : large;
 
   const { checkInStashBox, removeFromStashBox, addToStashBox } = useAnime();
   const isInStashBox = checkInStashBox(anime);
