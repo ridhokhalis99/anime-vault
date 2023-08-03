@@ -25,7 +25,7 @@ describe("AnimeContext", () => {
                 description: "description",
                 genres: ["genre"],
                 type: "type",
-                coverImage: { large: "image-url" },
+                coverImage: { large: "image-url", medium: "image-url" },
               })
             }
           >
@@ -61,7 +61,7 @@ describe("AnimeContext", () => {
         description: "description",
         genres: ["genre"],
         type: "type",
-        coverImage: { large: "image-url" },
+        coverImage: { large: "image-url", medium: "image-url" },
       },
     ];
     let removeFromStashBox: (anime: AnimeItem) => void = () => {};
@@ -85,7 +85,7 @@ describe("AnimeContext", () => {
                 description: "description",
                 genres: ["genre"],
                 type: "type",
-                coverImage: { large: "image-url" },
+                coverImage: { large: "image-url", medium: "image-url" },
               })
             }
           >
@@ -130,7 +130,7 @@ describe("AnimeContext", () => {
                 description: "description",
                 genres: ["genre"],
                 type: "type",
-                coverImage: { large: "image-url" },
+                coverImage: { large: "image-url", medium: "image-url" },
               })
             }
           >
@@ -154,7 +154,7 @@ describe("AnimeContext", () => {
         description: "description",
         genres: ["genre"],
         type: "type",
-        coverImage: { large: "image-url" },
+        coverImage: { large: "image-url", medium: "image-url" },
       })
     ).toBe(false);
 
@@ -170,7 +170,7 @@ describe("AnimeContext", () => {
         description: "description",
         genres: ["genre"],
         type: "type",
-        coverImage: { large: "image-url" },
+        coverImage: { large: "image-url", medium: "image-url" },
       })
     ).toBe(true);
   });
@@ -287,7 +287,7 @@ describe("AnimeContext", () => {
                   description: "description",
                   genres: ["genre"],
                   type: "type",
-                  coverImage: { large: "image-url" },
+                  coverImage: { large: "image-url", medium: "image-url" },
                 },
                 {
                   id: 2,
@@ -296,7 +296,7 @@ describe("AnimeContext", () => {
                   description: "description",
                   genres: ["genre"],
                   type: "type",
-                  coverImage: { large: "image-url" },
+                  coverImage: { large: "image-url", medium: "image-url" },
                 },
               ])
             }

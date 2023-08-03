@@ -9,7 +9,7 @@ export interface AnimeItem {
   type: string;
   coverImage: {
     large: string;
-    medium?: string;
+    medium: string;
   };
 }
 
