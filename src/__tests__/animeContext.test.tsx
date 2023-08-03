@@ -1,4 +1,3 @@
-import React from "react";
 import { render, act, screen, fireEvent } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import { AnimeProvider, useAnimeContext } from "../contexts/animeContext";
@@ -398,5 +397,36 @@ describe("AnimeContext", () => {
     });
 
     expect(collections[0].title).toBe("New Title");
+  });
+
+  it("getCollectionById returns the correct collection", () => {
+    let collections: Collection[] = [];
+    let getCollectionById: (
+      collectionId: number
+    ) => Collection | undefined = () => undefined;
+
+    function TestComponent() {
+      const {
+        collections: collectionsContext,
+        getCollectionById: getCollectionByIdContext,
+        addCollection: addCollectionContext,
+      } = useAnimeContext();
+      collections = collectionsContext;
+      getCollectionById = getCollectionByIdContext;
+
+      return null;
+    }
+
+    render(
+      <AnimeProvider>
+        <TestComponent />
+      </AnimeProvider>
+    );
+
+    expect(collections).toHaveLength(1);
+
+    const collectionId = collections[0]?.id;
+
+    expect(getCollectionById(collectionId)).toBe(collections[0]);
   });
 });
