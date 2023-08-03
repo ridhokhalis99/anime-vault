@@ -1,0 +1,26 @@
+{
+    "name": "AnimeVault",
+    "short_name": "animevault",
+    "description": "A anime list app",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#ffffff",
+    "theme_color": "#218BE6",
+    "icons": [
+        {
+            "src": "/icon-64.png",
+            "sizes": "64x64",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-128.png",
+            "sizes": "128x128",
+            "type": "image/png"
+        },
+        {
+            "src": "/icon-256x256.png",
+            "sizes": "256x256",
+            "type": "image/png"
+        }
+    ]
+}
