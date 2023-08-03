@@ -38,11 +38,13 @@ Anime Vault utilizes the following technologies and libraries:
 
 ## Links
 
+- **Live Link:** [https://anime-vault.netlify.app](https://anime-vault.netlify.app)
+
 - **Github:** [https://github.com/ridhokhalis99](https://github.com/ridhokhalis99)
 
-- **LinkedIn:** [https://www.linkedin.com/in/ridho-khalis/](https://www.linkedin.com/in/ridho-khalis/)
+- **LinkedIn:** [https://www.linkedin.com/in/ridho-khalis](https://www.linkedin.com/in/ridho-khalis)
 
-- **Website:** [https://www.ridhokhalis.com/](https://www.ridhokhalis.com/)
+- **Website:** [https://www.ridhokhalis.com](https://www.ridhokhalis.com)
 
 Feel free to explore the project and contact the author through the provided links for any questions or feedback.
 
